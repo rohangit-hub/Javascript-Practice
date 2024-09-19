@@ -1,0 +1,15 @@
+{
+  "name": "starter",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0",
+  "main": "string.js",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "git": "^0.1.5"
+  }
+}
