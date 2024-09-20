@@ -33,11 +33,11 @@ Array shift() --> remove the first element
 Array unshift() --> add the element at the first
 Array delete() 
 Array concat()
-Array copyWithin()
-Array flat()
-Array splice()
+Array copyWithin() --> Copy the element within the array
+Array flat() --> Flat the concat array
+Array splice() --> insert the element into the array
 Array toSpliced()
-Array slice()
+Array slice() --> slice the array
 
 Array Find and Search Methods
 **************************************
@@ -228,3 +228,112 @@ The slice() method does not remove any elements from the source array.
 const fal = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
 const citrus = fal.slice(1, 3);
 console.log(`slice of array --> ${citrus}\n`);
+
+// The indexOf() method searches an array for an element value and returns its position.
+// array.indexOf(item, start)
+// Array.lastIndexOf() is the same as Array.indexOf(), but returns the position
+// of the last occurrence of the specified element.
+// array.lastIndexOf(item, start)
+
+const arrIndexOf = ['a', 'b', 'c', 'a', 'd', 'a', 'e'];
+console.log(
+  `Indexof() return the iondex of the string, first occurence --> ${arrIndexOf.indexOf(
+    'a'
+  )}`
+);
+
+console.log(
+  `LastIdexof() return the iondex of the string, last occurence --> ${arrIndexOf.lastIndexOf(
+    'a'
+  )}\n`
+);
+
+/*
+    Array.includes() to arrays. This allows us to check if an element is present in an array (including NaN, unlike indexOf).
+    it retun the boolean value (True, False)
+*/
+
+console.log(
+  `includes() allows us to check if an element is present in an array  --> ${arrIndexOf.includes(
+    'a'
+  )}\n`
+);
+
+/*
+    The find() method returns the value of the first array element that passes a test function.
+    This example finds (returns the value of) the first element that is larger than 18:
+
+    the findLast() method that will start from the end of an array and return the value of the 
+    first element that satisfies a condition.
+*/
+
+const numbers = [4, 9, 16, 25, 29];
+let first = numbers.find(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+console.log(
+  `find() method returns the value of the first array element that passes a test function run form the start --> ${first}`
+);
+
+const temp = [27, 28, 30, 40, 42, 35, 30];
+let high = temp.findLast((x) => x > 40);
+
+console.log(
+  `findLast() method returns the value of the first array element that passes a test function run form the end --> ${high}\n`
+);
+
+/*
+  The sort() method sorts an array alphabetically:
+  The reverse() method reverses the elements in an array:
+
+  The difference between toSorted() and sort() is that the first method creates a new array, keeping the original array unchanged, while the last method alters the original array.
+
+  The difference between toReversed() and reverse() is that the first method creates a new array, keeping the original array unchanged, while the last method alters the original array.
+
+*/
+
+console.log(`Array Alpabetic Sort`);
+console.log(`sort() method sort the Alpabetic array --> ${arrIndexOf.sort()}`);
+console.log(`reverse() method reverse the array --> ${temp.reverse()}\n`);
+
+/*
+Numeric Sort
+By default, the sort() function sorts values as strings.
+This works well for strings ("Apple" comes before "Banana").
+If numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+Because of this, the sort() method will produce incorrect result when sorting numbers.
+You can fix this by providing a compare function:
+*/
+
+console.log(`Array Numeric Sort`);
+console.log(
+  `sort() method for numeric array accending --> ${temp.sort((a, b) => {
+    return a - b;
+  })}`
+);
+
+console.log(
+  `sort() method for numeric array decending --> ${temp.sort((a, b) => {
+    return b - a;
+  })}\n`
+);
+
+console.log(`Array Iteration Methods forEach()`);
+numbers.forEach(fun1);
+function fun1(value, index, array) {
+  console.log(
+    `forEach() function, index- ${index} value- ${value} multipied by 3 --> ${
+      value * 3
+    }`
+  );
+}
+console.log('\n');
+
+console.log(`Array Iteration Methods map()`);
+const numbers11 = [45, 4, 9, 16, 25];
+const numbers21 = numbers11.map((value, index, array) => {
+  return value * 2;
+});
+console.log(numbers21);
