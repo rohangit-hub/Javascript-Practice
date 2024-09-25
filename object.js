@@ -76,3 +76,72 @@ const objectLiteral = {
   );
   console.log(`\n`);
   
+console.log(`Object keys --> ${Object.keys(person1)}`)
+console.log(`Object Values --> ${Object.values(person1)}`)
+console.log(`Object entries --> ${Object.entries(person1)}`)
+
+//Object.assign() is used to copy values from one object to another.
+const assignObject = Object.assign(person1)
+console.log(assignObject )
+
+
+//Spread Operator
+// Initialize an object
+const name1 = {
+  firstName: 'Philip',
+  lastName: 'Fry'
+};
+
+// Initialize another object
+const details = {
+  job: 'Delivery Boy',
+  employer: 'Planet Express'
+};
+
+// Merge the object with the spread operator
+const character = {...name1, ...details}
+console.log(character);
+
+/* Object.freeze() prevents modification to properties and values of an 
+object, and prevents properties from being added or removed from an object. */
+
+// Initialize an object
+const user = {
+	username: 'AzureDiamond',
+	password: 'hunter2'
+};
+// Freeze the object
+const newUser = Object.freeze(user);
+newUser.password = '*******';
+newUser.active = true;
+console.log(newUser);
+
+/*
+Object.seal() prevents new properties from being added to an object, 
+but allows the modification of existing properties. This method is similar to Object.freeze(). 
+Refresh your console before implementing the code below to avoid an error. */
+
+const user1 = {
+	username: 'AzureDiamond',
+	password: 'hunter2'
+};
+// Seal the object
+const newUser1 = Object.seal(user1);
+
+newUser1.password = '*******';
+newUser1.active = true;
+console.log(newUser1);
+
+// Using JSON.stringify() //
+// JavaScript objects can be converted to a string with JSON method JSON.stringify().
+
+// Create an Object
+const person22 = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+// Stringify Object
+let myString = JSON.stringify(person22);
+console.log(`Object to String by stringify() --> ${myString}`)
