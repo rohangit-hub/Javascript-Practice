@@ -337,3 +337,35 @@ const numbers21 = numbers11.map((value, index, array) => {
   return value * 2;
 });
 console.log(numbers21);
+console.log('\n');
+
+console.log(`Array Iteration Methods Filter()`);
+const numbers111 = [45, 4, 9, 16, 25];
+const numbers211 = numbers111.filter((value, index, array) => {
+  return value > 18;
+});
+console.log(numbers211);
+console.log('\n');
+
+console.log(`Array Iteration Methods Reduce()`);
+const numbers1111 = [1, 3, 5, 7, 9];
+const numbers2111 = numbers1111.reduce((updated, value, index, array) => {
+  updated = updated + value;
+  return updated;
+});
+console.log(numbers2111);
+console.log('\n');
+
+/*
+Array Spread (...)
+The ... operator expands an iterable (like an array) into more elements
+
+*/
+
+const q1 = ['Jan', 'Feb', 'Mar'];
+const q2 = ['Apr', 'May', 'Jun'];
+const q3 = ['Jul', 'Aug', 'Sep'];
+const q4 = ['Oct', 'Nov', 'May'];
+
+const year = [...q1, ...q2, ...q3, ...q4];
+console.log(`...Spread Operator in array -> ${year}`);
