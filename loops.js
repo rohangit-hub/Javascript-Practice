@@ -41,6 +41,7 @@ for(x in arr1){
   console.log(`person ${x} is ${arr1[x]}`)
 }
 console.log('\n')
+
 /*
 The For Of Loop
 ===================
